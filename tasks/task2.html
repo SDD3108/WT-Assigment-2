@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .page-layout {
+            grid-template-columns: 220px minmax(0, 1fr);
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas: "header header" "sidebar main" "footer footer";
+        }
+        .layout-header {
+            grid-area: header;
+        }
+        .layout-sidebar {
+            grid-area: sidebar;
+        }
+        .layout-main {
+            grid-area: main;
+        }
+        .layout-footer {
+            grid-area: footer;
+        }
+        @media (max-width: 640px) {
+            .page-layout {
+                grid-template-columns: minmax(0, 1fr);
+                grid-template-rows: auto auto 1fr auto;
+                grid-template-areas:"header" "sidebar" "main" "footer";
+            }
+        }
+    </style>
 </head>
-<body>
-    2
+<body class="min-h-screen bg-gray-100 text-gray-800">
+    <div class="page-layout grid min-h-screen gap-5 p-5">
+        <header class="layout-header flex min-w-0 flex-wrap items-center justify-between gap-4 rounded-lg border border-gray-300 bg-white px-6 py-4">
+            <a href="../index.html" class="whitespace-nowrap text-xl font-bold"><p>Assignment 2</p></a>
+            <nav aria-label="Main navigation" class="max-w-full overflow-x-auto">
+                <ul class="flex items-center gap-6 whitespace-nowrap">
+                    <li><a href="../index.html" class="hover:underline">Main</a></li>
+                    <li><a href="task1.html" class="hover:underline">Task 1</a></li>
+                    <li><a href="task2.html" aria-current="page" class="font-bold underline">Task 2</a></li>
+                    <li><a href="task3.html" class="hover:underline">Task 3</a></li>
+                    <li><a href="task4.html" class="hover:underline">Task 4</a></li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="layout-sidebar min-w-0 overflow-x-auto rounded-lg border border-gray-300 bg-blue-100 p-5">
+            <h2 class="mb-4 whitespace-nowrap text-xl font-bold">Sidebar</h2>
+            <nav aria-label="Page sections">
+                <ul class="space-y-3 whitespace-nowrap">
+                    <li><a href="#about" class="hover:underline">About the page</a></li>
+                    <li><a href="#notes" class="hover:underline">My notes</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="layout-main min-w-0 overflow-x-auto rounded-lg border border-gray-300 bg-white p-6">
+            <div class="w-max min-w-full whitespace-nowrap">
+                <h1 class="mb-6 text-3xl font-bold">Grid page layout</h1>
+                <section id="about">
+                    <h2 class="mb-3 text-xl font-bold">About the page</h2>
+                    <p>The header and footer take the full width. The sidebar is on the left and the main content is on the right</p>
+                </section>
+                <section id="notes" class="mt-8">
+                    <h2 class="mb-3 text-xl font-bold">My notes</h2>
+                    <p>Grid areas help name the parts of the page and choose their positions</p>
+                </section>
+            </div>
+        </main>
+        <footer class="layout-footer min-w-0 overflow-x-auto rounded-lg border border-gray-300 bg-gray-200 px-6 py-4">
+            <p class="min-w-max whitespace-nowrap text-center">Assignment 2 — Grid practice</p>
+        </footer>
+    </div>
 </body>
 </html>

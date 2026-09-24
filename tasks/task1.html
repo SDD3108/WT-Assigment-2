@@ -4,8 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    1
+<body class="min-h-screen bg-gray-100 text-gray-800">
+    <header class="flex flex-wrap items-center justify-between gap-4 border-b border-gray-300 bg-white px-6 py-4">
+        <a href="../index.html" class="whitespace-nowrap text-xl font-bold"><p class="whitespace-nowrap text-xl font-bold">Assignment 2</p></a>
+        <nav aria-label="Main navigation" class="max-w-full overflow-x-auto">
+            <ul class="flex items-center gap-6 whitespace-nowrap">
+                <li><a href="../index.html" class="hover:underline">Main</a></li>
+                <li><a href="task1.html" aria-current="page" class="font-bold underline">Task 1</a></li>
+                <li><a href="task2.html" class="hover:underline">Task 2</a></li>
+                <li><a href="task3.html" class="hover:underline">Task 3</a></li>
+                <li><a href="task4.html" class="hover:underline">Task 4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="px-6 py-8">
+        <h1 class="mb-2 text-3xl font-bold">My cards</h1>
+        <p class="mb-6">Three landscapes in a Flexbox row.</p>
+        <div class="flex items-stretch gap-5 overflow-x-auto pb-5">
+            <article class="flex w-max min-w-80 shrink-0 flex-col overflow-hidden rounded-lg border border-gray-300 bg-white transition-shadow hover:shadow-lg">
+                <img src="../images/images.jpeg" alt="#" class="h-48 w-full object-cover">
+                <div class="flex flex-1 flex-col items-start gap-3 p-5">
+                    <h2 class="whitespace-nowrap text-xl font-bold">Mountains</h2>
+                    <p class="whitespace-nowrap">A simple mountain illustration for my first card</p>
+                    <button type="button" onclick="document.getElementById('card-dialog-1').showModal()" class="mt-auto rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+                        Read more
+                    </button>
+                </div>
+            </article>
+            <article class="flex w-max min-w-80 shrink-0 flex-col overflow-hidden rounded-lg border border-gray-300 bg-white transition-shadow hover:shadow-lg">
+                <img src="../images/istockphoto-1481183606-170667a.jpg" alt="Evening landscape illustration" class="h-48 w-full object-cover">
+                <div class="flex flex-1 flex-col items-start gap-3 p-5">
+                    <h2 class="whitespace-nowrap text-xl font-bold">Evening</h2>
+                    <p class="whitespace-nowrap">Warm colors and hills. This card has a little more text so the equal card height is easier to see</p>
+                    <button type="button" onclick="document.getElementById('card-dialog-2').showModal()" class="mt-auto rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+                        Read more
+                    </button>
+                </div>
+            </article>
+            <article class="flex w-max min-w-80 shrink-0 flex-col overflow-hidden rounded-lg border border-gray-300 bg-white transition-shadow hover:shadow-lg">
+                <img src="../images/images (1).jpeg" alt="#" class="h-48 w-full object-cover">
+                <div class="flex flex-1 flex-col items-start gap-3 p-5">
+                    <h2 class="whitespace-nowrap text-xl font-bold">Purple hills</h2>
+                    <p class="whitespace-nowrap">I like the colors in this picture</p>
+                    <button type="button" onclick="document.getElementById('card-dialog-3').showModal()" class="mt-auto rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+                        Read more
+                    </button>
+                </div>
+            </article>
+            <article class="flex w-max min-w-80 shrink-0 flex-col overflow-hidden rounded-lg border border-gray-300 bg-white transition-shadow hover:shadow-lg">
+                <img src="../images/images (2).jpeg" alt="#" class="h-48 w-full object-cover">
+                <div class="flex flex-1 flex-col items-start gap-3 p-5">
+                    <h2 class="whitespace-nowrap text-xl font-bold">Purple hills</h2>
+                    <p class="whitespace-nowrap">I like the colors in this picture</p>
+                    <button type="button" onclick="document.getElementById('card-dialog-3').showModal()" class="mt-auto rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+                        Read more
+                    </button>
+                </div>
+            </article>
+        </div>
+        <dialog id="card-dialog-1" class="m-auto max-w-[90vw] overflow-x-auto rounded-lg border border-gray-300 bg-white p-6 backdrop:bg-black/40">
+            <h2 class="mb-3 whitespace-nowrap text-xl font-bold">Landscape 1</h2>
+            <p class="mb-5 whitespace-nowrap">This local SVG illustration is made from a background, a circle and two shapes for the hills.</p>
+            <form method="dialog">
+                <button class="rounded bg-gray-800 px-4 py-2 text-white hover:bg-gray-700">Close</button>
+            </form>
+        </dialog>
+        <dialog id="card-dialog-2" class="m-auto max-w-[90vw] overflow-x-auto rounded-lg border border-gray-300 bg-white p-6 backdrop:bg-black/40">
+            <h2 class="mb-3 whitespace-nowrap text-xl font-bold">Landscape 2</h2>
+            <p class="mb-5 whitespace-nowrap">This local SVG illustration is made from a background, a circle and two shapes for the hills.</p>
+            <form method="dialog">
+                <button class="rounded bg-gray-800 px-4 py-2 text-white hover:bg-gray-700">Close</button>
+            </form>
+        </dialog>
+        <dialog id="card-dialog-3" class="m-auto max-w-[90vw] overflow-x-auto rounded-lg border border-gray-300 bg-white p-6 backdrop:bg-black/40">
+            <h2 class="mb-3 whitespace-nowrap text-xl font-bold">Landscape 3</h2>
+            <p class="mb-5 whitespace-nowrap">This local SVG illustration is made from a background, a circle and two shapes for the hills.</p>
+            <form method="dialog">
+                <button class="rounded bg-gray-800 px-4 py-2 text-white hover:bg-gray-700">Close</button>
+            </form>
+        </dialog>
+    </main>
 </body>
 </html>
